@@ -1,4 +1,4 @@
-routes = require './routes'
+routes = require './app/controllers'
 
 exports.route = (app) ->
 
