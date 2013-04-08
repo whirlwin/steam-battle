@@ -18,6 +18,7 @@ exports.configure = ->
     app.use app.router
     app.use require('stylus').middleware(__dirname + '/public')
     app.use express.static(path.join __dirname, 'public')
+    app.locals.pretty = true
 
   app.configure 'development', ->
     app.use express.errorHandler()

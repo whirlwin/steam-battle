@@ -2,6 +2,11 @@ doctype 5
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet',
+        href='/stylesheets/lib/bootstrap/bootstrap.min.css')
+    link(rel='stylesheet',
+        href='/stylesheets/lib/bootstrap/bootstrap-responsive.min.css')
   body
     block content
+    script(type='text/javascript', src='javascripts/lib/jquery-1.9.1.min.js')
+    script(type='text/javascript', src='javascripts/lib/bootstrap/bootstrap.min.js')
