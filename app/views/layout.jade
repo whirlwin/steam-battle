@@ -5,8 +5,15 @@ html
     link(rel='stylesheet',
         href='/stylesheets/lib/bootstrap/bootstrap.min.css')
     link(rel='stylesheet',
+        href='/stylesheets/bootstrap-fix.css')
+    link(rel='stylesheet',
         href='/stylesheets/lib/bootstrap/bootstrap-responsive.min.css')
   body
-    block content
+    div.navbar.navbar-fixed-top
+      div.navbar-inner
+        div.container
+          a.brand(href='/') Steam Battle
+    div.container
+      block content
     script(type='text/javascript', src='javascripts/lib/jquery-1.9.1.min.js')
     script(type='text/javascript', src='javascripts/lib/bootstrap/bootstrap.min.js')
