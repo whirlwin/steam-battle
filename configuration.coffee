@@ -1,5 +1,6 @@
 express = require 'express'
 path    = require 'path'
+fs      = require 'fs'
 
 exports.configure = ->
 
@@ -22,5 +23,10 @@ exports.configure = ->
 
   app.configure 'development', ->
     app.use express.errorHandler()
+
+  do configureAPIkeys = ->
+    fs.readFile 'credentials.json', 'UTF-8', (err, data) ->
+      throw err if err
+      process.env['steamAPIkey'] = JSON.parse(data).steamAPIkey
 
   app
