@@ -1,10 +1,14 @@
 express = require 'express'
 path    = require 'path'
 fs      = require 'fs'
+assets  = require 'connect-assets'
 
 exports.configure = ->
 
   app = express()
+
+  # Configure connect-assets to use ./app/assets
+  assets = assets src: './app/assets'
 
   app.configure ->
     app.set 'port', process.env.PORT || 3000
@@ -19,6 +23,7 @@ exports.configure = ->
     app.use app.router
     app.use require('stylus').middleware(__dirname + '/public')
     app.use express.static(path.join __dirname, 'public')
+    app.use assets
     app.locals.pretty = true
 
   app.configure 'development', ->
