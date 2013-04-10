@@ -14,4 +14,4 @@
 >     npm install -g nodemon
 
 5. Start the server
->    nodemon app.coffee
+>     nodemon app.coffee
