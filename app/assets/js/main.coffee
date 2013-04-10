@@ -1,0 +1,1 @@
+mainCtrl = ($scope) ->
