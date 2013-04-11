@@ -1,6 +1,13 @@
 main = angular.module 'main', []
 
-main.controller 'mainController', ($scope) ->
+main.controller 'mainController', ($scope, $http) ->
 
-  $scope.foo = ->
-    console.log 'ouch'
+  $scope.getSteamFriends = ->
+
+    $http({ url: "steamFriends?steamID=#{$scope.steamID}", method: 'GET' }
+
+    ).success((friends) ->
+      $scope.friends = friends
+
+    ).error (data) ->
+      console.log data
