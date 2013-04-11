@@ -3,10 +3,12 @@ extends layout
 block content
   div.hero-unit
     h4 Battle your friend's Steam account
-    form.form-inline(action='/', method='GET')
+    form.form-inline(ng-controller='mainController',
+          ng-submit='foo()')
       div.input-prepend.input-append
         span.add-on(title='Click here to log in to Steam and, copy the ID from the web address')
           a(href='http://steamcommunity.com/my/')
             i.icon-question-sign
-        input(type='text', placeholder='Your Steam ID...')
-        button.btn(type='button') Go!
+        input(type='text', placeholder='Your Steam ID...',
+            ng-click='foo()')
+        button.btn(type='submit') Go!
