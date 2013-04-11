@@ -1,5 +1,6 @@
-@mainController = ($scope) ->
+main = angular.module 'main', []
+
+main.controller 'mainController', ($scope) ->
 
   $scope.foo = ->
-
-    console.log 'asd'
+    console.log 'ouch'
