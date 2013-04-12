@@ -10,9 +10,17 @@ block content
             i.icon-question-sign
         input(type='text', placeholder='Your Steam ID...', ng-model='steamID')
         button.btn(type='submit') Go!
-    ul.media-list
-      li(ng-repeat='friend in friends')
-        a.media(href='#', ng-click='compareFriend(friend.steamID)')
-          img.media-object.pull-left(ng-src='{{friend.avatar}}')
-          div.media-body
-            div.media-heading {{friend.name}}
+    div.row
+      div.span4
+        ul.media-list
+          li(ng-repeat='friend in friends')
+            a.media(href='#', ng-click='compareFriend(friend)')
+              img.media-object.pull-left(ng-src='{{friend.avatar}}')
+              div.media-body
+                div.media-heading {{friend.name}}
+      div.span3
+        h3 You
+        hr
+      div.span3
+        h3 {{selectedFriend.name || 'Select friend'}}
+        hr

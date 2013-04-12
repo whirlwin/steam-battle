@@ -12,5 +12,5 @@ main.controller 'mainController', ($scope, $http) ->
     ).error (data) ->
       console.log data
 
-  $scope.compareFriend = (friendSteamID) ->
-    console.log friendSteamID
+  $scope.compareFriend = (selectedFriend) ->
+    $scope.selectedFriend = selectedFriend
